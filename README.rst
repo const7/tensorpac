@@ -46,7 +46,10 @@ Tensorpac uses NumPy, SciPy and joblib for parallel computing. To get started, j
 
 .. code-block:: console
 
-    $ pip install tensorpac
+  # original package: pip install tensorpac
+
+  # custom modified version:
+  pip install git+https://github.com/const7/tensorpac.git 
 
 Code snippet & illustration
 ---------------------------
