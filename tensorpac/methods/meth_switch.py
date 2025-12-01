@@ -13,7 +13,7 @@ def get_pac_fcn(idp, n_bins, p, implementation="tensor", full=False):
     """
     n_bins, p = np.int64(n_bins), np.float64(p)
     assert implementation in ['tensor', 'numba']
-    if implementation is 'tensor':
+    if implementation == 'tensor':
         from tensorpac.methods.meth_pac import (
             mean_vector_length, modulation_index, heights_ratio,
             norm_direct_pac, phase_locking_value, gauss_cop_pac)
@@ -24,7 +24,7 @@ def get_pac_fcn(idp, n_bins, p, implementation="tensor", full=False):
             4: partial(norm_direct_pac, p=p),
             5: partial(phase_locking_value),
             6: partial(gauss_cop_pac)}
-    elif implementation is 'numba':
+    elif implementation == 'numba':
         from tensorpac.methods.meth_pac_nb import (
             mean_vector_length_nb, modulation_index_nb, heights_ratio_nb,
             norm_direct_pac_nb, phase_locking_value_nb)
